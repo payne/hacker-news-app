@@ -3,11 +3,16 @@
   color: #999;
 }
 
+.comments .author-name {
+  display: inline-block;
+}
+
 .list {
   padding: 0;
 }
 
-.list li {
+.list li,
+.comments li {
     padding: 0 15px 5px;
     position: relative;
     border-bottom: 1px solid #f3f3f3;
