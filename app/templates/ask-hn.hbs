@@ -1,1 +1,23 @@
+<div class="col-sm-3 col-md-4 col-md-offset-2 fixed-column list">
+  <ul class="list-unstyled">
+    {{#each model.hits as |question|}}
+      <li>
+        <h5 class="author-name">{{question.author}}</h5>
+        <h4 class="story-title">{{question.title}}</h4>
+        <p class="story-url">
+          <a href={{question.url}}>{{question.url}}</a>
+        </p>
+        <div class="meta">
+          <span class="story-comment-count">{{question.num_comments}}</span>
+          <ul class="list-inline">
+            <li>
+              {{link-to 'Comments' 'ask-hn.question.comments' question}}
+            </li>
+          </ul>
+        </div>
+      </li>
+    {{/each}}
+  </ul>
+</div>
+
 {{outlet}}
