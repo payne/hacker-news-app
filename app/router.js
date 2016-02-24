@@ -7,7 +7,7 @@ const Router = Ember.Router.extend({
 
 Router.map(function() {
   this.route('front-page', function() {
-    this.route('story', function() {
+    this.route('story', { path: ':objectID' }, function() {
       this.route('comments');
     });
   });

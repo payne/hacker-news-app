@@ -1,1 +1,23 @@
+<div class="col-sm-3 col-md-4 col-md-offset-2 fixed-column list">
+  <ul class="list-unstyled">
+    {{#each model.hits as |story|}}
+      <li>
+        <h5 class="author-name">{{story.author}}</h5>
+        <h4 class="story-title">{{story.title}}</h4>
+        <p class="story-url">
+          <a href={{story.url}}>{{story.url}}</a>
+        </p>
+        <div class="meta">
+          <span class="story-comment-count">{{story.num_comments}}</span>
+          <ul class="list-inline">
+            <li>
+              {{link-to 'Comments' 'front-page.story.comments' story}}
+            </li>
+          </ul>
+        </div>
+      </li>
+    {{/each}}
+  </ul>
+</div>
+
 {{outlet}}
