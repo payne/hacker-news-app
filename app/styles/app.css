@@ -3,6 +3,11 @@
   color: #999;
 }
 
+.comments h3 {
+  border-bottom: 1px solid #f3f3f3;
+  padding-bottom: 15px;
+}
+
 .comments .author-name {
   display: inline-block;
 }
@@ -52,7 +57,8 @@
 }
 
 .sidebar a.active,
-.sidebar a.active:hover {
+.sidebar a.active:hover,
+.sidebar a:hover {
   color: #0b79e5;
   background: #fff;
   font-weight: 500;

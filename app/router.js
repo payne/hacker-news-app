@@ -6,13 +6,13 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-  this.route('front-page', function() {
-    this.route('story', { path: ':objectID' }, function() {
+  this.route('front-page', { path: '/' }, function() {
+    this.route('story', { path: '/front-page/:objectID' }, function() {
       this.route('comments');
     });
   });
   this.route('ask-hn', function() {
-    this.route('question', function() {
+    this.route('question', { path: ':objectID'}, function() {
       this.route('comments');
     });
   });
