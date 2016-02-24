@@ -1,1 +1,27 @@
-{{outlet}}
+<div class="col-sm-3 col-md-6 col-md-offset-6 fixed-column comments">
+  <h3 class="email-content-title">Comments</h3>
+
+  <ul class="list-unstyled">
+    {{#each model.hits as |comment|}}
+      <li>
+        <h5 class="author-name">{{comment.author}}</h5>
+        <button type="button" class="toggle-comment btn btn-default btn-xs" {{action 'toggleComment'}}>
+          {{if isCommentVisible 'hide' 'show'}}
+        </button>
+
+        {{#if isCommentVisible}}
+          <p>
+            {{{comment.comment_text}}}
+          </p>
+        {{/if}}
+        <div class="meta">
+          <ul class="list-inline">
+            <li>
+              <span>{{moment-from-now comment.created_at}}</span>
+            </li>
+          </ul>
+        </div>
+      </li>
+    {{/each}}
+  </ul>
+</div>
